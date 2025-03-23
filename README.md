@@ -7,6 +7,4 @@ Type in the name of the city, select the time of day, and click “Find”. Or y
 Maybe someday I'll add more cities (if I have the strength to finish my web development degree :-)
 
 
-Nikita Gukov,
-
-https://nikitagukov.ru/blog/
+Nikita Gukov
