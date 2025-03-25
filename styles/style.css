@@ -19,7 +19,8 @@ html {
   font-family: 'Fira Sans Condensed', sans-serif;
   font-size: 18px;
   background-color: #1b1919;
-  padding: 133px 30px;
+  padding-block: 133px;
+  padding-inline: 30px;
 }
 
 h1,
@@ -67,18 +68,24 @@ ol {
 
 .content__details {
   grid-area: details;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 20px;
 }
 
 .result__video-container {
   position: relative;
-  width: 711px;
-  height: 386px;
-  margin-bottom: 16px;
+  inline-size: 711px;
+  block-size: 386px;
+  margin-block-end: 16px;
 }
 
 .result__video {
-  width: 100%;
-  height: 100%;
+  inline-size: 100%;
+  block-size: 100%;
   object-fit: cover;
 }
 
@@ -94,12 +101,12 @@ ol {
   font-size: 18px;
   color: #fff;
   font-weight: 400;
-  margin-bottom: 5px;
+  margin-block-end: 5px;
 }
 
 .search-form__label {
   display: flex;
-  width: fit-content;
+  inline-size: fit-content;
   align-items: center;
   margin: 0;
 }
@@ -116,15 +123,15 @@ ol {
 .search-form__textfield {
   font-family: 'Fira Sans Condensed', sans-serif;
   font-size: 18px;
-  color: rgba(255, 255, 255, 0.7);
+  color: #fff;
   font-weight: 400;
-  border-top: 1px solid #fff;
-  border-bottom: 1px solid #fff;
-  border-left: none;
-  border-right: none;
+  border-block-start: 1px solid currentColor;
+  border-block-end: 1px solid currentColor;
+  border-inline-start: none;
+  border-inline-end: none;
   background-color: transparent;
-  width: 225px;
-  height: 27px;
+  inline-size: 225px;
+  block-size: 27px;
   appearance: none;
   padding: 0;
 }
@@ -136,33 +143,31 @@ ol {
 .search-form__checkbox-list {
   display: flex;
   gap: 15px;
-  width: 212px;
-  height: 20px;
 }
 
 .search-form__pseudo-checkbox {
   display: flex;
-  width: 19px;
-  height: 19px;
+  inline-size: 19px;
+  block-size: 19px;
   border: 1px solid #fff;
   justify-content: center;
   align-items: center;
-  margin-right: 5px;
+  margin-inline-end: 5px;
 }
 
 .search-form__pseudo-checkbox::after {
   content: "";
   background-color: #fff;
-  width: 15px;
-  height: 15px;
+  inline-size: 15px;
+  block-size: 15px;
   display: none;
 }
 
 .search-form__checkbox:checked+.search-form__pseudo-checkbox::after {
   display: block;
   background-color: #fff;
-  width: 15px;
-  height: 15px;
+  inline-size: 15px;
+  block-size: 15px;
 }
 
 .search-form__label:has(.search-form__checkbox:focus-visible) {
@@ -189,12 +194,12 @@ ol {
 
 .button {
   background-color: transparent;
-  border: 1px solid #fff;
+  border: 1px solid currentColor;
   font-family: 'Fira Sans Condensed', sans-serif;
   font-size: 18px;
   color: #fff;
   font-weight: 700;
-  height: 34px;
+  block-size: 34px;
 }
 
 .button:focus {
@@ -215,13 +220,14 @@ ol {
 }
 
 .search-form__submit-button {
-  width: 194px;
-  margin: 20px 0 0 0;
+  inline-size: 194px;
+  margin-block-start: 20px;
+  margin-inline: 0;
 }
 
 .more-button {
-  width: 100%;
-  margin: 0 2px 2px 2px;
+  inline-size: 100%;
+  margin-block-start: 30px;
 }
 
 .title {
@@ -231,7 +237,6 @@ ol {
   font-weight: 700;
   line-height: 94%;
   text-transform: uppercase;
-  margin-bottom: 26px;
 }
 
 .content__accent {
@@ -240,21 +245,23 @@ ol {
 
 .content__list-container {
   position: relative;
-  width: 401px;
-  height: 298px;
+  inline-size: 399px;
+  block-size: 298px;
   overflow-y: auto;
-  overflow-x: hidden;
+  padding-block: 2px;
+  padding-inline-start: 2px;
+  padding-inline-end: 4px;
 }
 
 .content__list {
   display: flex;
   flex-direction: column;
   gap: 30px;
-  margin-bottom: 30px;
 }
 
 .content__list-item {
-  padding: 0 3px;
+  padding-block: 0;
+  padding-inline: 1px;
 }
 
 .content__video-card {
@@ -264,16 +271,16 @@ ol {
 }
 
 .content__video-card-description-container {
-  width: 196px;
-  height: 103px;
+  inline-size: 196px;
+  flex: 1;
 }
 
 .content__card-link {
   text-decoration: none;
   color: #fff;
   display: block;
-  width: 100%;
-  height: 100%;
+  inline-size: 100%;
+  block-size: 100%;
 }
 
 .content__card-link:active {
@@ -302,7 +309,6 @@ ol {
   font-weight: 700;
   line-height: 1.2;
   text-transform: uppercase;
-  max-width: 98%;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -318,21 +324,11 @@ ol {
 }
 
 .content__video-card-thumbnail {
-  width: 194px;
-  height: 103px;
+  inline-size: 194px;
+  block-size: 103px;
+  flex: 0 0 194px;
   object-fit: cover;
   object-position: center;
-}
-
-.preloader {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 /* Кастомный скроллбар */
