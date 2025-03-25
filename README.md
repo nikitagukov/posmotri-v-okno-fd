@@ -8,4 +8,5 @@ Maybe someday I'll add more cities (if I have the strength to finish my web deve
 
 
 Nikita Gukov
-https://nikitagukov.ru/blog/
+
+https://github.com/nikitagukov/posmotri-v-okno-fd
